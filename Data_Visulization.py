@@ -53,3 +53,27 @@ axes[1, 1].tick_params(axis='x', rotation=0)
 plt.tight_layout()
 plt.show()
 # %%
+# 2. Select the columns you want to analyze 
+# (It's best to isolate the target and a handful of features so the matrix is readable)
+columns_of_interest = ['Class', 'Amount', 'Time', 'V10', 'V12', 'V14', 'V17', 'V2', 'V4', 'V11']
+corr_data = df[columns_of_interest]
+
+# 3. Calculate the correlation math
+corr_matrix = corr_data.corr()
+
+# 4. Set up the matplotlib figure
+plt.figure(figsize=(10, 8))
+
+# 5. Draw the heatmap using Seaborn
+sns.heatmap(
+    corr_matrix, 
+    annot=True,             # Shows the actual correlation numbers in the boxes
+    cmap='coolwarm',        # Red for positive, Blue for negative correlation
+    fmt=".2f",              # Rounds the numbers to 2 decimal places
+    vmin=-1, vmax=1,        # Sets the boundaries of the color scale
+    linewidths=0.5          # Adds a clean white grid line between boxes
+)
+
+plt.title('Feature Correlation Matrix', fontsize=16)
+plt.show()
+# %%
