@@ -41,3 +41,5 @@ Using gridsearch CV i tuned the parameters automatically by itterating through a
 NOTES:
 
 Using Jupyter plugin in vscode for graphs. 
+
+V1 TO come back to if next steps fail.
