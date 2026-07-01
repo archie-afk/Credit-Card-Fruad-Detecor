@@ -76,11 +76,7 @@ python main.py
 
 Run it from the project root or from `steps/` — the path handling adjusts automatically. It expects `data/creditcard.csv` to exist at the project root, and will save `fraud_model.joblib`, `amount_scaler.joblib`, and `decision_threshold.joblib` there when finished.
 
-To explore the threshold tradeoff in more detail after a training run:
 
-```bash
-python steps/step10_threshold_sweep.py
-```
 
 ## Key Fixes Applied
 
